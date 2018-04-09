@@ -22,5 +22,5 @@ for i in range(1, len(friends) + 1):
 	print("User's name: {}".format(user.name))
 	print("User's profile picture url: {}".format(user.photo))
 	print("User's main url: {}".format(user.url))
-	client.send(Message(text= 'Hi ' + str(user.name).split()[0] + '!Vote for ' + candidate + ' at sa2018.vote/' + candidate.split()[0].lower()), thread_id=user.uid, thread_type=ThreadType.USER)
+	client.send(Message(text= 'Hi ' + str(user.name).split()[0] + '! Vote for ' + candidate + ' at sa2018.vote/' + candidate.split()[0].lower()), thread_id=user.uid, thread_type=ThreadType.USER)
 client.logout()
