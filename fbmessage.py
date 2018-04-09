@@ -14,7 +14,7 @@ with open(friends_file) as g:
 	friends = json.load(g)
 print(len(friends))
 #Change to support your candidate!
-candidate = 'Will Wang'
+candidate = 'William Wang'
 for i in range(1, len(friends) + 1):
 	users = client.searchForUsers(friends['friend' + str(i)])
 	user = users[0]
