@@ -31,7 +31,7 @@ print(len(friends))
 print(friends['friend1'][0])
 
 candidate = 'William Wang'
-for i in range(, len(friends) + 1):
+for i in range(1, len(friends) + 1):
 	users = client.searchForUsers(friends['friend' + str(i)][0])
 	user = users[0]
 	if str(user.name) == friends['friend' + str(i)][0]:
