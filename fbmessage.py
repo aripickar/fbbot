@@ -9,7 +9,7 @@ with open(key_file) as f:
 client = Client(keys['username'], keys['password'])
 friends_file = 'friends.json'
 #add all freinds that want to be messaged to friends.json with the 
-#form "friendX" : "Friend name"
+#form "friendX" : "Friend name" with X as friend number
 with open(friends_file) as g:
 	friends = json.load(g)
 print(len(friends))
