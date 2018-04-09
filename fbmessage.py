@@ -22,5 +22,10 @@ for i in range(1, len(friends) + 1):
 	print("User's name: {}".format(user.name))
 	print("User's profile picture url: {}".format(user.photo))
 	print("User's main url: {}".format(user.url))
-	client.send(Message(text= 'Hi ' + str(user.name).split()[0] + '! Vote for ' + candidate + ' at sa2018.vote/' + candidate.split()[0].lower()), thread_id=user.uid, thread_type=ThreadType.USER)
+	messages = ('Hi ' + str(user.name).split()[0] + '! Vote for ' + candidate + ' at asuc.org/elections',
+			'Hey ' + str(user.name).split()[0] + '! Its that time of year again, and I need you to vote for  ' + candidate + ' at asuc.org/elections',
+			'What\'s up ' + str(user.name).split()[0] + '! It\'s voting season right now, and I need your help to get ' + candidate + ' elected. You can vote at asuc.org/elections. Thanks!',
+			'Hey ' + str(user.name).split()[0] + '! ASUC elections is really important to me, and I have been working to get ' + candidate + ' elected. You can help me out at asuc.org/elections',
+			'Hey ' + str(user.name) + '! ASUC elections are in full swing, and I\'m on the campaign of' + candidate + ', who is running for Senate. Would you mind taking 5 seconds and voting for them at asuc.org/elections')
+	client.send(Message(text= messages[random.randint(0,4)]), thread_id=user.uid, thread_type=ThreadType.USER)
 client.logout()
