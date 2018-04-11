@@ -28,10 +28,9 @@ with open(friends_file, 'r') as g:
 	friends = json.load(g)
 print(len(friends))
 #Change to support your candidate!
-print('Messaging: ' + friends['friend1'][0])
 inp = input("What day is it?:")
 candidate = 'William Wang'
-for i in range(90, len(friends) + 1):
+for i in range(220, len(friends) + 1):
 	users = client.searchForUsers(friends['friend' + str(i)][0])
 	user = users[0]
 	if str(user.name) == friends['friend' + str(i)][0]:
@@ -46,13 +45,13 @@ for i in range(90, len(friends) + 1):
 					'Hey ' + str(user.name).split()[0].strip() + '! Its that time of year again, and I need you to vote for  ' + candidate + ' at asuc.org/elections!. It\'s really imoportant to me, and I would love if you could help!',
 					'What\'s up ' + str(user.name).split()[0].strip() + '! It\'s voting season right now, and I need your help to get ' + candidate + ' elected. You can vote at asuc.org/elections. Thanks!',
 					'Hey ' + str(user.name).split()[0].strip() + '! ASUC elections is really important to me, and I have been working to get ' + candidate + ' elected. You can help me out at asuc.org/elections. Thanks!',
-					'Hey ' + str(user.name)[0].strip() + '! ASUC elections are in full swing, and I\'m on the campaign of' + candidate + ', who is running for Senate. Would you mind taking 5 seconds and voting for him at asuc.org/elections? Thanks!')
+					'Hey ' + str(user.name).split()[0].strip() + '! ASUC elections are in full swing, and I\'m on the campaign of' + candidate + ', who is running for Senate. Would you mind taking 5 seconds and voting for him at asuc.org/elections? Thanks!')
 		else:
-			messages = ('Hey ' + str(user.name).split()[0] + 'in case you haven\'t already voted for ASUC senate, voting ends soon. It would really mean a lot to me if you vote for ' + candidate + ' at asuc.org/elections!. Thanks!',
+			messages = ('Hey ' + str(user.name).split()[0].strip() + ' in case you haven\'t already voted for ASUC senate, voting ends soon. It would really mean a lot to me if you vote for ' + candidate + ' at asuc.org/elections!. Thanks!',
 				'Hey ' + str(user.name).split()[0].strip() + '! Elections are winding down, and if you haven\'t done it already, please take the time to vote for ' + candidate + ' at asuc.org/elections!. It\'s really important to me, and I would love if you could help!',
-				'Hey ' + str(user.name)[0].strip() + '! ASUC elections are in full swing, and I\'m on the campaign of ' + candidate + ', who is running for Senate. If you haven\'t voted already, would you mind taking 5 seconds and voting for him at asuc.org/elections? Thanks!',
+				'Hey ' + str(user.name).split()[0].strip() + '! ASUC elections are in full swing, and I\'m on the campaign of ' + candidate + ', who is running for Senate. If you haven\'t voted already, would you mind taking 5 seconds and voting for him at asuc.org/elections? Thanks!',
 				'What\'s up ' + str(user.name).split()[0].strip() + '! It\'s the end of voting season right now, and I need your help to get ' + candidate + ' elected. If you haven\'t voted already, you can vote at asuc.org/elections. Thanks!',
-				'Hey ' + str(user.name).split()[0].strip() + '! If you haven\'t voted already, can you vote for ' + candidate + 'at asuc.org/elections! Thanks so much')
+				'Hey ' + str(user.name).split()[0].strip() + '! If you haven\'t voted already, can you vote for ' + candidate + ' at asuc.org/elections! Thanks so much')
 		print(messages[random.randint(0,4)])
-		client.send(Message(text= messages[random.randint(0,4)]), thread_id=user.uid, thread_type=ThreadType.USER)'''
+		client.send(Message(text= messages[random.randint(0,4)]), thread_id=user.uid, thread_type=ThreadType.USER)
 client.logout()
