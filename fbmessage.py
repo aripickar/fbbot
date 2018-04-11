@@ -50,7 +50,7 @@ for i in range(90, len(friends) + 1):
 		else:
 			messages = ('Hey ' + str(user.name).split()[0] + 'in case you haven\'t already voted for ASUC senate, voting ends soon. It would really mean a lot to me if you vote for ' + candidate + ' at asuc.org/elections!. Thanks!',
 				'Hey ' + str(user.name).split()[0].strip() + '! Elections are winding down, and if you haven\'t done it already, please take the time to vote for ' + candidate + ' at asuc.org/elections!. It\'s really important to me, and I would love if you could help!',
-				'Hey ' + str(user.name)[0].strip() + '! ASUC elections are in full swing, and I\'m on the campaign of' + candidate + ', who is running for Senate. If you haven\'t voted already, would you mind taking 5 seconds and voting for him at asuc.org/elections? Thanks!',
+				'Hey ' + str(user.name)[0].strip() + '! ASUC elections are in full swing, and I\'m on the campaign of ' + candidate + ', who is running for Senate. If you haven\'t voted already, would you mind taking 5 seconds and voting for him at asuc.org/elections? Thanks!',
 				'What\'s up ' + str(user.name).split()[0].strip() + '! It\'s the end of voting season right now, and I need your help to get ' + candidate + ' elected. If you haven\'t voted already, you can vote at asuc.org/elections. Thanks!',
 				'Hey ' + str(user.name).split()[0].strip() + '! If you haven\'t voted already, can you vote for ' + candidate + 'at asuc.org/elections! Thanks so much')
 		print(messages[random.randint(0,4)])
